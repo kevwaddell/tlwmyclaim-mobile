@@ -1,0 +1,207 @@
+.pg-nav {
+.abs;
+.right(0);
+.top(0);
+.bottom(0);
+.bg-col-grayDk;
+.txt-col-wht;	
+.over-hide;
+.transition(0.5s);
+width: 90%;
+	
+	&.nav-closed {
+		li {
+		.opacity(0);	
+		}
+	}
+	
+	&.nav-open {
+		li {
+		.opacity(1);	
+		}
+	}
+
+	.pag-nav-inner {
+	width: 100%;	
+	}
+	
+	#close-nav-btn {
+	.abs;
+	.bottom(1);
+	.right(1);
+	.w(4);
+	.h(4);
+	.pad-all(0);
+	.no-border;
+	.bg-col-gray;
+	.txt-col-wht;
+	.rounded(100%);
+		i {
+		.block;
+		.w(4);
+		.h(4);
+		.line-h(4);
+		text-align: center;	
+		.font-size(1.4);
+		}	
+		
+		&:active, &:focus {
+		.bg-col-wht;
+		.txt-col-gray-dk;
+		}
+	}
+
+	ul#menu-user-menu, ul#menu-admin-menu, ul#menu-referer-menu {
+	.list-style-gone;
+	.mag-bot(0);
+	.over-hide;
+	.pad-top(1);
+	
+		li {
+		.transition(1.0s);	
+			&.admin-link {
+			.none;	
+			}
+		}
+	
+		a {
+		.line-h(4);	
+		.txt-col-wht;
+		.caps;
+		.font-size(1.4);
+		.font-slab-serif;
+		.no-text-dec;
+		.block;
+		.pad-left(1.5);
+		.pad-right(1.5);
+			&:active, &:focus {
+			.txt-col-gray-dk;
+			.bg-col(@gray);
+				i {
+				.txt-col-red;	
+				}
+			}
+		}
+		
+		i {
+		.pad-right(0.5);	
+		}
+			
+		li {
+		.mag-bot(0);
+			&.pull-right {
+			float: none;	
+			}
+		}
+			
+	}
+}
+
+#masthead {
+.bg-col(@wht);
+.abs;
+.top(0);
+.left(0);
+.right(0);
+.h(7);
+z-index: 10;
+		
+	.user-name {
+	width: 20%;
+	.pad(1.5;1;0;1);
+	.h(6);
+	.fleft;
+		@media screen and (orientation: landscape) {
+		width: 30%;
+		}
+		i {
+		.block;
+		text-align: center;	
+		.font-size(1.6);
+		.mag-bot(0.3);
+		}
+		
+		a.user-link {
+		.block;
+		.txt-col-gray-dk;
+		.no-text-dec;
+		.font-size(0.8);
+		.line-h(0.8);
+		text-align: center;	
+			&:active, &:focus {
+			.txt-col-gray;
+			}	
+		}
+		
+		.user-info {
+		.txt-col-gray-dk;
+		.font-size(0.8);
+		.line-h(0.8);
+		text-align: center;	
+		}
+	}
+	
+	.nav-btn-wrap {
+	width: 20%;
+	.h(6);
+	.fright;	
+		@media screen and (orientation: landscape) {
+		width: 30%;
+		}
+	}
+	
+	.logo {
+	width: 60%;
+	.h(6);
+	.fleft;
+	.rel;
+	
+		@media screen and (orientation: landscape) {
+		width: 40%;
+		}
+	
+		a {
+		.block;
+		height: 100%;
+		.bg-img("tlw-logo-wide.png");
+		.bg-repeat(no-repeat);
+		background-position: center center;
+		.bg-size(95%);
+					
+			&:hover, &:active, &:focus{
+			.opacity(0.5);	
+			}
+			
+		}
+		
+		span {
+		.abs;
+		.bottom(0.8);
+		.left(0);
+		width: 100%;
+		.caps;
+		.font-slab-serif;
+		.font-size(0.8);
+		letter-spacing: 0.8px;
+		text-align: center;
+		}
+			
+	}
+	
+	#nav-btn {
+	padding: 0px;
+	width: 100%;
+	.h(6);
+	.line-h(6);
+	.no-rounded;
+	.no-border;
+		&:hover, &:active, &:focus {
+		.txt-col-red;
+		}
+	}
+
+}
+
+html.svg #masthead .logo a {
+.bg-img("tlw-logo-wide.svg");	
+}

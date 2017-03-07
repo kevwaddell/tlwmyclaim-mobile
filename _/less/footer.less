@@ -1,0 +1,85 @@
+.site-footer {
+//.border-top(@wht; 0.4);
+.bg-col-grayDk;
+.txt-col-wht;
+.pad-top(1.5);
+.font-size(1.4);
+.line-h(1.8);
+
+	.copyright-legal {
+	.pad-bot(1.5);
+	.font-size(1);
+	.line-h(1.4);
+		a {
+		.txt-col-wht;
+		.bold;
+		.block;
+			&:hover, &:active, &:focus {
+			.txt-col-red;
+			}	
+		}	
+	}
+	
+	.footer-links {
+
+		ul {
+		.list-style-gone;
+		.mag-bot(1);
+		text-align: center;
+		
+			li {
+			.in-block;
+			.pad-left(1);
+			.pad-right(1);
+			}	
+			
+			a {
+			.txt-col-wht;
+			.no-text-dec;
+			.font-size(1);
+			.line-h(1.4);
+				&:hover, &:active, &:focus {
+				.txt-col-gray;
+				}	
+			}
+		}
+	}
+	
+	.visit-site-btn {
+	.font-slab-serif;
+	.caps;
+	.bg-col-red;
+	.txt-col-wht;
+	.no-border;
+	.no-rounded;
+	.border-top(@wht; 0.2);
+	.line-h(2.2);
+	.rel;
+		&:after {
+		content: "\f0a9";	
+		font-family: FontAwesome;
+		.line-h(3);
+		.abs;
+		top: 50%;
+		.right(1.5);
+		.mag-top(-1.5);
+		.w(3);
+		.h(3);
+		.bg-col(@wht);	
+		.txt-col-red;
+		.rounded(100%);
+		}
+		span {
+		.block;	
+		.font-size(2.5);
+		}
+		
+		&:hover, &:active, &:focus {
+		.bg-col-red-dk;
+		}
+	}
+}
+
+html.svg .site-footer #tlw-footer-logo {
+	.bg-img("tlw-logo-wide-wht.svg");
+}

@@ -1,0 +1,108 @@
+.user-login-forms {
+.pad-top(1);
+.pad-bot(1.5);
+}
+
+.tml-login, .tml-resetpass, .tml-lostpassword {
+margin: auto;
+	
+	p.message {
+	margin: -25px auto 10px;
+	text-align: center;
+	.bg-col-green-dk;
+	.txt-col-wht;
+	.bold;	
+	.pad(0.5; 1; 0.5; 1);
+	.border(@wht; 0.2);
+	.font-size(1.2);
+	.rel;
+	z-index: 2;
+	}
+	
+	.form-group {
+	.mag-bot(0);	
+	}
+	
+	p.indicator-hint {
+	.pad-top(1);
+	.font-size(1.4);	
+	}
+	
+	.tml-rememberme-submit-wrap {
+	.mag-bot(0);
+		label {
+		text-align: center;	
+		}
+		
+		input[type="checkbox"] {
+		vertical-align: text-top;
+		}
+		
+		.form-group {
+		.mag-bot(0);	
+		}
+		
+		.checkbox {
+		.mag-bot(0);
+		.mag-top(0);	
+		}
+	}
+	
+	input[type="submit"] {
+		.bg-col-red;
+		.txt-col-wht;	
+		.caps;
+		.font-slab-serif;
+		.no-border;
+			&:hover, &:active, &:focus {
+			.bg-col-red-dk;
+			.txt-col-wht;
+			}
+	}
+	
+	.tml-action-links {
+	.block;
+	
+		li {
+		float: none;	
+		}
+		a {
+		.block;
+		.bg-col-grayDk;
+		.txt-col-wht;
+		.caps;
+		.pad-all(1);
+		.rounded(4px);	
+		.font-slab-serif;
+		.no-text-dec;
+			&:hover, &:active, &:focus {
+			.bg-col-red;
+			}
+		}	
+	}
+}
+
+.tml-profile {
+	.tml-submit-wrap {
+	.mag-top(1);
+	.mag-bot(0);
+		.btn {
+		.mag-top(0);
+		.mag-bot(0);	
+		}	
+	}
+	
+	.acf-field {
+	.none;	
+	}
+	
+	p.message {
+	.mag-bot(0);
+	text-align: center;
+	.no-border;
+	.border-bot(@wht; 0.2);	
+	.bg-col-orange-lt;
+	.font-size(1.2);
+	.bold;
+	}
+}
