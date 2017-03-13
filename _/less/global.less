@@ -38,7 +38,6 @@ height: 100%;
 width: 100%;
 .rel;
 .bg-col-grayDk;
-.transition(0.5s);
 	&.nav-open {
 	.drop-shadow(0, 0, 20px, 0.5);
 	-moz-transform: translate(-80%, 0%);
@@ -49,6 +48,14 @@ width: 100%;
 	pointer-events: none;
 		.site-main, #masthead {
 		.opacity(0.5);	
+		}
+		
+		@media screen and (orientation: landscape) {
+		-moz-transform: translate(-60%, 0%);
+		-webkit-transform: translate(-60%, 0%);
+		-o-transform: translate(-60%, 0%);
+		-ms-transform: translate(-60%, 0%);
+		transform: translate(-60%, 0%);
 		}
 	}
 }
@@ -72,7 +79,7 @@ article.post, article.page {
 .pad-top(0);
 .pad-bot(0);	
 	@media screen and (orientation: landscape) {
-	.min-h(25);
+	//.min-h(25);
 	}
 }
 

@@ -3447,10 +3447,6 @@ a:focus {
   width: 100%;
   position: relative;
   background-color: #4b4b4b;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
 }
 .site.nav-open {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -3470,6 +3466,15 @@ a:focus {
   -webkit-opacity: 0.5;
   opacity: 0.5;
 }
+@media screen and (orientation: landscape) {
+  .site.nav-open {
+    -moz-transform: translate(-60%, 0%);
+    -webkit-transform: translate(-60%, 0%);
+    -o-transform: translate(-60%, 0%);
+    -ms-transform: translate(-60%, 0%);
+    transform: translate(-60%, 0%);
+  }
+}
 .site-main {
   position: absolute;
   top: 70px;
@@ -3488,10 +3493,6 @@ article.page {
   padding-bottom: 0px;
 }
 @media screen and (orientation: landscape) {
-  article.post,
-  article.page {
-    min-height: 250px;
-  }
 }
 article.front-page {
   padding-top: 0px;
@@ -3666,21 +3667,26 @@ COLOUR STRIP
   position: absolute;
   right: 0px;
   top: 0px;
-  bottom: 0px;
+  height: 100%;
   background-color: #4b4b4b;
   color: white;
   overflow: hidden;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
   width: 80%;
+}
+@media screen and (orientation: landscape) {
+  .pg-nav {
+    width: 60%;
+  }
 }
 .pg-nav.nav-closed li {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
   opacity: 0;
+}
+.pg-nav.nav-open {
+  z-index: 10;
+  overflow: visible;
 }
 .pg-nav.nav-open li {
   -moz-opacity: 1;
@@ -3690,20 +3696,22 @@ COLOUR STRIP
 }
 .pg-nav .pag-nav-inner {
   width: 100%;
+  height: 100%;
+  border-left: 2px solid white;
 }
 .pg-nav #close-nav-btn {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
+  position: relative;
+  width: 44px;
+  height: 44px;
   padding: 0px;
-  border: none;
-  background-color: #918F8F;
-  color: white;
+  border: 2px solid white;
+  background-color: white;
+  color: #C60751;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
+  margin-left: -22px;
+  margin-top: 20px;
 }
 .pg-nav #close-nav-btn i {
   display: block;
@@ -3715,8 +3723,8 @@ COLOUR STRIP
 }
 .pg-nav #close-nav-btn:active,
 .pg-nav #close-nav-btn:focus {
-  background-color: white;
-  color: #4b4b4b;
+  background-color: #4b4b4b;
+  color: white;
 }
 .pg-nav ul#menu-user-menu,
 .pg-nav ul#menu-admin-menu,
@@ -3804,7 +3812,7 @@ COLOUR STRIP
 }
 @media screen and (orientation: landscape) {
   #masthead .user-name {
-    width: 30%;
+    width: 35%;
   }
 }
 #masthead .user-name i {
@@ -3838,7 +3846,7 @@ COLOUR STRIP
 }
 @media screen and (orientation: landscape) {
   #masthead .nav-btn-wrap {
-    width: 30%;
+    width: 35%;
   }
 }
 #masthead .logo {
@@ -3849,7 +3857,7 @@ COLOUR STRIP
 }
 @media screen and (orientation: landscape) {
   #masthead .logo {
-    width: 40%;
+    width: 30%;
   }
 }
 #masthead .logo a {
@@ -4212,6 +4220,7 @@ html.svg #masthead .logo a {
   border-radius: 0px;
   margin-bottom: 0px;
   border-bottom: 2px solid white;
+  min-height: 150px;
 }
 .panel-default .panel-heading {
   background: #918F8F;
@@ -4259,6 +4268,7 @@ html.svg #masthead .logo a {
 .panel-default .table-bordered,
 .panel-default .panel-body {
   font-size: 10px;
+  border-bottom: 1px solid white;
 }
 .panel-default .table-bordered > tbody > tr > th,
 .panel-default .table-bordered > tbody > tr > td,

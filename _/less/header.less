@@ -2,12 +2,16 @@
 .abs;
 .right(0);
 .top(0);
-.bottom(0);
+//.bottom(0);
+height: 100%;
 .bg-col-grayDk;
 .txt-col-wht;	
 .over-hide;
-.transition(0.5s);
 width: 80%;
+
+	@media screen and (orientation: landscape) {
+	width: 60%;
+	}
 	
 	&.nav-closed {
 		li {
@@ -16,26 +20,30 @@ width: 80%;
 	}
 	
 	&.nav-open {
+	z-index: 10;
+	overflow: visible;
 		li {
 		.opacity(1);	
 		}
 	}
 
 	.pag-nav-inner {
-	width: 100%;	
+	width: 100%;
+	height: 100%;
+	.border-left(@wht; 0.2);	
 	}
 	
 	#close-nav-btn {
-	.abs;
-	.bottom(1);
-	.right(1);
-	.w(4);
-	.h(4);
+	.rel;
+	.w(4.4);
+	.h(4.4);
 	.pad-all(0);
-	.no-border;
-	.bg-col-gray;
-	.txt-col-wht;
+	.border(@wht; 0.2);
+	.bg-col-wht;
+	.txt-col-red;
 	.rounded(100%);
+	.mag-left(-2.2);
+	.mag-top(2);
 		i {
 		.block;
 		.w(4);
@@ -46,8 +54,8 @@ width: 80%;
 		}	
 		
 		&:active, &:focus {
-		.bg-col-wht;
-		.txt-col-gray-dk;
+		.bg-col-grayDk;
+		.txt-col-wht;
 		}
 	}
 
@@ -112,7 +120,7 @@ z-index: 10;
 	.h(6);
 	.fleft;
 		@media screen and (orientation: landscape) {
-		width: 30%;
+		width: 35%;
 		}
 		i {
 		.block;
@@ -146,7 +154,7 @@ z-index: 10;
 	.h(6);
 	.fright;	
 		@media screen and (orientation: landscape) {
-		width: 30%;
+		width: 35%;
 		}
 	}
 	
@@ -157,7 +165,7 @@ z-index: 10;
 	.rel;
 	
 		@media screen and (orientation: landscape) {
-		width: 40%;
+		width: 30%;
 		}
 	
 		a {
