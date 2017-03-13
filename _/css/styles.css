@@ -3456,11 +3456,11 @@ a:focus {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  -moz-transform: translate(-90%, 0%);
-  -webkit-transform: translate(-90%, 0%);
-  -o-transform: translate(-90%, 0%);
-  -ms-transform: translate(-90%, 0%);
-  transform: translate(-90%, 0%);
+  -moz-transform: translate(-80%, 0%);
+  -webkit-transform: translate(-80%, 0%);
+  -o-transform: translate(-80%, 0%);
+  -ms-transform: translate(-80%, 0%);
+  transform: translate(-80%, 0%);
   pointer-events: none;
 }
 .site.nav-open .site-main,
@@ -3532,12 +3532,8 @@ COLOUR STRIP
   background-color: #2D7EA9;
   border: none;
 }
-.red-btn {
-  background-color: #C60751;
+.btn {
   border: none;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
   color: white;
   font-family: "aleoreg", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -3546,18 +3542,26 @@ COLOUR STRIP
   line-height: 30px;
   padding: 0px;
   text-transform: uppercase;
-  border-bottom: 2px solid white;
   position: relative;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
 }
-.red-btn i {
+.btn i {
+  font-size: 14px;
+  line-height: 30px;
   position: absolute;
   top: 0px;
   right: 0px;
-  line-height: 30px;
   width: 30px;
-  background-color: #7A1039;
-  font-size: 14px;
   border-left: 2px solid white;
+}
+.red-btn {
+  background-color: #C60751;
+  border-bottom: 2px solid white;
+}
+.red-btn i {
+  background-color: #7A1039;
 }
 .red-btn:hover,
 .red-btn:active,
@@ -3567,6 +3571,20 @@ COLOUR STRIP
 }
 .red-btn.btn-block + .btn-block {
   margin-top: 0px;
+}
+.red-btn.wp-generate-pw {
+  border-bottom: none;
+}
+.btn-success {
+  background-color: #789b2c;
+}
+.btn-success i {
+  background-color: #ACD15C;
+}
+.btn-success:hover,
+.btn-success:active,
+.btn-success:focus {
+  background-color: #ACD15C;
 }
 #global-tel-num {
   padding-top: 10px;
@@ -3656,7 +3674,7 @@ COLOUR STRIP
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  width: 90%;
+  width: 80%;
 }
 .pg-nav.nav-closed li {
   -moz-opacity: 0;
@@ -4307,15 +4325,18 @@ html.svg #masthead .logo a {
   color: white;
   font-size: 25px;
   line-height: 46px;
+  text-align: center;
 }
 .well-message h2 {
   font-size: 30px;
+  line-height: 30px;
   font-family: "aleobold", "Helvetica Neue Bold", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-stretch: normal;
   color: #C60751;
   margin-top: 0px;
   margin-bottom: 5px;
+  text-transform: uppercase;
 }
 .well-message p {
   font-size: 16px;
@@ -4364,13 +4385,13 @@ html.svg #masthead .logo a {
   color: #789b2c;
   background-color: #ACD15C;
 }
-.dashboard-alert.alert-danger {
+.dashboard-alert.alert-warning {
   background-color: #df7c05;
 }
-.dashboard-alert.alert-danger .alert-heading i {
+.dashboard-alert.alert-warning .alert-heading i {
   color: #FBAD4F;
 }
-.dashboard-alert.alert-danger .alert-number {
+.dashboard-alert.alert-warning .alert-number {
   color: #df7c05;
   background-color: #FBAD4F;
 }
@@ -4719,6 +4740,8 @@ html.svg #masthead .logo a {
   border-radius: 0px;
   border-top: 2px solid white;
   line-height: 22px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   position: relative;
 }
 .site-footer .visit-site-btn:after {

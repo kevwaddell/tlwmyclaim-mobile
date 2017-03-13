@@ -2,6 +2,8 @@
 $user_id = $current_user->ID;
 $user_type = get_user_meta( $user_id, 'user_type', true); 
 $contact_pg = get_page_by_path( 'contact-us');
+$dashboard_pg = get_page_by_path( 'dashboard' );
+$cases_pg =  get_option('page_for_posts');
 ?>
 
 <div class="tml tml-profile" id="theme-my-login<?php $template->the_instance(); ?>">
@@ -41,7 +43,7 @@ $contact_pg = get_page_by_path( 'contact-us');
 					<tr id="password" class="user-pass1-wrap">
 						<td>
 							<input class="hidden form-control input-lg" value=" " /><!-- #24364 workaround -->
-							<button type="button" class="btn btn-success btn-block wp-generate-pw hide-if-no-js"><i class="glyphicon glyphicon-refresh pull-right"></i>Generate New Password</button>
+							<button type="button" class="red-btn btn btn-block wp-generate-pw hide-if-no-js"><i class="fa fa-refresh"></i>Generate New Password</button>
 							<div class="wp-pwd hide-if-js">
 								<span class="password-input-wrapper">
 									<input type="password" name="pass1" id="pass1" class="regular-text form-control input-lg" value="" autocomplete="off" data-pw="<?php echo esc_attr( wp_generate_password( 24 ) ); ?>" aria-describedby="pass-strength-result" />
@@ -81,7 +83,8 @@ $contact_pg = get_page_by_path( 'contact-us');
 					<input type="hidden" name="action" value="profile" />
 					<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 					<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr( $current_user->ID ); ?>" />
-					<input type="submit" class="btn btn-block btn-default" value="<?php esc_attr_e( 'Change password', 'theme-my-login' ); ?>" name="submit" id="submit" />
+<!-- 					<input type="submit" class="btn btn-block btn-default" value="<?php esc_attr_e( 'Change password', 'theme-my-login' ); ?>" name="submit" id="submit" /> -->
+					<button type="submit" class="btn btn-success btn-block">Change password<i class="fa fa-check"></i></button>
 					</p>
 			  </div>
 		</div>
@@ -90,6 +93,22 @@ $contact_pg = get_page_by_path( 'contact-us');
 	
 	</form>
 	
-	<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>
-	<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
+	<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block">
+		<i class="fa fa-envelope fa-lg"></i>
+		<?php echo get_the_title($contact_pg->ID); ?>
+	</a>
+	<a href="<?php echo get_permalink($dashboard_pg->ID ); ?>" class="red-btn btn btn-block">
+		<i class="fa fa-dashboard"></i>
+		<?php echo get_the_title($dashboard_pg->ID); ?>
+	</a>
+	<?php if ($user_type == 'ref') { ?>
+	<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block">
+		<i class="fa fa-folder-open"></i>
+		<?php echo get_the_title($cases_pg); ?>
+	</a>
+	<?php } ?>
+	<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block">
+		<i class="fa fa-power-off fa-lg"></i>
+		Log Out
+	</a>
 </div>

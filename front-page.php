@@ -12,7 +12,7 @@
 			global $current_user;
 			$user_id = $current_user->ID;
 			$user_type = get_user_meta( $user_id, 'user_type', true);
-			$account_pg = get_page_by_path( 'your-account' );	
+			$account_pg = get_page_by_path( 'account-details' );	
 			?>
 				
 				<?php if ($user_type == 'client') { 

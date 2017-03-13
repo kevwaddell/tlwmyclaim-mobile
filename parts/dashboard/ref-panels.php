@@ -2,7 +2,7 @@
 global $user_id;
 $current_user = wp_get_current_user();
 $user_data = get_userdata($user_id);
-$account_pg = get_page_by_path( 'your-account' );
+$account_pg = get_page_by_path( 'account-details' );
 $cases_pg = get_page_by_path( 'cases' );
 //echo '<pre class="debug">';print_r($user_data);echo '</pre>';	
 
