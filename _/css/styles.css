@@ -3742,6 +3742,7 @@ COLOUR STRIP
   -moz-transition: all 1s ease-out;
   -o-transition: all 1s ease-out;
   transition: all 1s ease-out;
+  margin-bottom: 0px;
 }
 .pg-nav ul#menu-user-menu li.admin-link,
 .pg-nav ul#menu-admin-menu li.admin-link,
@@ -3784,16 +3785,6 @@ COLOUR STRIP
 .pg-nav ul#menu-admin-menu i,
 .pg-nav ul#menu-referer-menu i {
   padding-right: 5px;
-}
-.pg-nav ul#menu-user-menu li,
-.pg-nav ul#menu-admin-menu li,
-.pg-nav ul#menu-referer-menu li {
-  margin-bottom: 0px;
-}
-.pg-nav ul#menu-user-menu li.pull-right,
-.pg-nav ul#menu-admin-menu li.pull-right,
-.pg-nav ul#menu-referer-menu li.pull-right {
-  float: none;
 }
 #masthead {
   background-color: white;
