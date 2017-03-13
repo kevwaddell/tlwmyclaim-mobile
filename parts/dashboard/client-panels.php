@@ -7,7 +7,7 @@ $client_personal_raw = get_user_meta($user_id, 'client_personal', true);
 $client_personal = unserialize($client_personal_raw);
 $client_contact_raw = get_user_meta($user_id, 'client_contact', true);	
 $client_contact = unserialize($client_contact_raw);	
-$account_pg = get_page_by_path( 'your-account' );
+$account_pg = get_page_by_path( 'account-details' );
 $contact_pg = get_page_by_path( 'contact-us');
 $claim_pg = get_page_by_path( 'your-claim');
 ?>
@@ -47,11 +47,11 @@ $claim_details = unserialize($claim_details_raw);
  	</div>
  	
 	<div class="status-date"><?php echo $date; ?></div>
-	<div class="case-details"><span>Case type: <?php echo $claim_details['claim-type']; ?></span>|<span>Case Ref: <?php echo $case_ref; ?></span></div>
+	<div class="case-details"><span>Case type: <?php echo $claim_details['claim-type']; ?></span><br><span>Case Ref: <?php echo $case_ref; ?></span></div>
 	<div class="case-status"><?php echo $status; ?></div>
 
 </div>
-<a href="<?php echo get_permalink( $claim_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-folder-open fa-lg"></i>View case details</a>
+<a href="<?php echo get_permalink( $claim_pg->ID ); ?>" class="red-btn btn btn-block"><i class="fa fa-folder-open fa-lg"></i>Case details</a>
 <?php } ?>
 
 <?php
@@ -71,10 +71,10 @@ $claims = get_posts( $claims_args );
 	<table class="table table-bordered">
 	<tbody>
 		<tr>
-		<th width="25%" class="text-center">Reference</th>
-		<th width="20%" class="text-center">Status</th>
-		<th width="50%" class="text-center">Type</th>
-		<th width="5%" class="text-center"><i class="fa fa-cogs"></i></th>
+			<th width="20%" class="text-center">Reference</th>
+			<th width="20%" class="text-center">Status</th>
+			<th width="45%" class="text-center">Type</th>
+			<th width="15%" class="text-center"><i class="fa fa-cogs"></i></th>
 		</tr>
 		<?php foreach ($claims as $claim) { 
 		$case_status = get_post_meta( $claim->ID, 'case_status', true );
@@ -95,6 +95,6 @@ $claims = get_posts( $claims_args );
 </div>
 <?php } ?>
 
-<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i>View Your Account details</a>
+<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i><?php echo get_the_title($account_pg->ID); ?></a>
 <a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>
 <a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-power-off fa-lg"></i>Log Out</a>

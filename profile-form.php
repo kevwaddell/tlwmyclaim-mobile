@@ -4,6 +4,7 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 $contact_pg = get_page_by_path( 'contact-us');
 $dashboard_pg = get_page_by_path( 'dashboard' );
 $cases_pg =  get_option('page_for_posts');
+$claim_pg = get_page_by_path( 'your-claim');
 ?>
 
 <div class="tml tml-profile" id="theme-my-login<?php $template->the_instance(); ?>">
@@ -105,6 +106,12 @@ $cases_pg =  get_option('page_for_posts');
 	<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block">
 		<i class="fa fa-folder-open"></i>
 		<?php echo get_the_title($cases_pg); ?>
+	</a>
+	<?php } ?>
+	<?php if ($user_type == 'client') { ?>
+	<a href="<?php echo get_permalink($claim_pg->ID); ?>" class="red-btn btn btn-block">
+		<i class="fa fa-folder-open"></i>
+		<?php echo get_the_title($claim_pg->ID); ?>
 	</a>
 	<?php } ?>
 	<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block">

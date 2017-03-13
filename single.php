@@ -7,8 +7,9 @@ $user_id = get_current_user_id();
 
 		<?php while ( have_posts() ) : the_post(); ?>
 		<?php 
-		$account_pg = get_page_by_path( 'your-account' );
+		$account_pg = get_page_by_path( 'account-details' );
 		$contact_pg = get_page_by_path( 'contact-us');
+		$dashboard_pg = get_page_by_path( 'dashboard' );
 		?>
 		<?php
 		$case_progress_raw = get_post_meta( $post->ID, 'case_progress', true );
@@ -150,7 +151,8 @@ $user_id = get_current_user_id();
 					<?php } ?>
 					<?php if ( !current_user_can( 'administrator' ) ) { ?>
 					<button id="contact-handler-btn" class="red-btn btn btn-block btn-lg"><i class="fa fa-comments fa-lg"></i>Message your case handler</button>
-				<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i>View Your Account details</a>
+					<a href="<?php echo get_permalink( $dashboard_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-dashboard fa-lg"></i><?php echo get_the_title($dashboard_pg->ID); ?></a>
+				<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i><?php echo get_the_title($account_pg->ID); ?></a>
 				<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>
 					<?php } ?>
 			</section>

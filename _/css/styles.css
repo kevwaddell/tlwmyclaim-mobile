@@ -4210,8 +4210,7 @@ html.svg #masthead .logo a {
   -moz-border-radius: 0px;
   border-radius: 0px;
   margin-bottom: 0px;
-  border-bottom: 2px solid white;
-  min-height: 150px;
+  border-bottom: 1px solid white;
 }
 .panel-default .panel-heading {
   background: #918F8F;
@@ -4267,7 +4266,28 @@ html.svg #masthead .logo a {
 .panel-default .table-bordered > tfoot > tr > td {
   border: 1px solid white;
   vertical-align: middle;
-  padding: 3px;
+  padding: 0px;
+  height: 30px;
+}
+.panel-default .table-bordered > tbody > tr > th a.btn,
+.panel-default .table-bordered > tbody > tr > td a.btn,
+.panel-default .table-bordered > thead > tr > td a.btn,
+.panel-default .table-bordered > tfoot > tr > td a.btn {
+  position: relative;
+  margin-top: 0px;
+}
+.panel-default .table-bordered > tbody > tr > th a.btn i,
+.panel-default .table-bordered > tbody > tr > td a.btn i,
+.panel-default .table-bordered > thead > tr > td a.btn i,
+.panel-default .table-bordered > tfoot > tr > td a.btn i {
+  position: relative;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+}
+.panel-default td.address {
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 .panel-default .add-info-txt {
   height: 92px;
@@ -4296,9 +4316,6 @@ html.svg #masthead .logo a {
 .panel-default th.header_lg {
   font-size: 20px;
   background-color: #7A1039 !important;
-}
-.panel-default .btn-block i.pull-right {
-  line-height: 20px;
 }
 .well-message {
   background-color: #7A1039;

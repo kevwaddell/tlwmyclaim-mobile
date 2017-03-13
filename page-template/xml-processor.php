@@ -46,8 +46,8 @@ echo "<br>********------START OF PROCESSING-------*******<br>\n";
 	$client_personal['title'] = $caseDetails['title'];
 	$client_personal['forename'] = $first_name;
 	$client_personal['surname'] = $last_name;
-	$client_personal['date-of-birth'] = $caseDetails['date-of-birth'];
-	$client_personal['national-insurance-number'] = $caseDetails['national-insurance-number'];
+	//$client_personal['date-of-birth'] = $caseDetails['date-of-birth'];
+	//$client_personal['national-insurance-number'] = $caseDetails['national-insurance-number'];
 	
 	// Client Address
 	$client_address = array();
