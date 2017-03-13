@@ -41,7 +41,7 @@ $closed = 0;
 	<div class="alert-number text-center"><?php echo $open; ?></div>
 </div>
 
-<div class="alert alert-danger text-center dashboard-alert">
+<div class="alert alert-warning text-center dashboard-alert">
 	<div class="alert-heading text-center">Closed Cases <i class="fa fa-folder"></i></div>
 	<div class="alert-number"><?php echo $closed; ?></div>
 </div>

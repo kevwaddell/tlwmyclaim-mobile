@@ -65,11 +65,27 @@ if ( is_user_logged_in() && ($user_type == "ref" || $user_type == "admin") ) { ?
 		</section>	
 		
 		<?php else: ?>
-			<div class="well well-lg well-message text-center">
-				<h2>Sorry</h2>
-				<p>There are no open cases at the moment.</p>
-			</div>
+		<div class="well well-lg well-message text-center">
+			<i class="fa fa-folder-open"></i>
+			<h2>Sorry</h2>
+			<p>There are no open cases at the moment.</p>
+		</div>
 		<?php endif; ?>
+		
+		<?php if ($user_type == "admin") { 
+		$clients_pg = get_page_by_path( 'clients' );
+		$referrers_pg = get_page_by_path( 'referrers' );	
+		?>
+		<a href="<?php echo get_permalink($clients_pg->ID ); ?>" class="red-btn btn btn-block">
+			<i class="fa fa-users"></i>
+			<?php echo get_the_title($clients_pg->ID); ?>
+		</a>
+		<a href="<?php echo get_permalink($referrers_pg->ID ); ?>" class="red-btn btn btn-block">
+			<i class="fa fa-building"></i>
+			<?php echo get_the_title($referrers_pg->ID); ?>
+		</a>
+		<?php } ?>
+		<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
 				
 	</article>
 	

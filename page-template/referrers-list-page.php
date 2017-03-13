@@ -17,6 +17,8 @@ Template Name: Referrers List page
 $users = get_users( $users_args ); 
 //$users = false;
 //echo '<pre class="debug">';print_r($users);echo '</pre>';
+$cases_pg =  get_option('page_for_posts');
+$clients_pg = get_page_by_path( 'clients' );
 ?>
 
 
@@ -100,11 +102,23 @@ $users = get_users( $users_args );
 			<?php } else { ?>
 
 			<div class="well well-lg well-message text-center">
+				<i class="fa fa-building"></i>
 				<h2>Sorry</h2>
 				<p>There are no referrers at the moment.</p>
 			</div>
 	
 			<?php } ?>
+			
+			<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block">
+			<i class="fa fa-folder-open"></i>
+			<?php echo get_the_title($cases_pg); ?>
+			</a>
+			<a href="<?php echo get_permalink($clients_pg->ID ); ?>" class="red-btn btn btn-block">
+			<i class="fa fa-users"></i>
+			<?php echo get_the_title($clients_pg->ID); ?>
+			</a>
+			<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
+
 					
 		</article><!-- #post-## -->
 
