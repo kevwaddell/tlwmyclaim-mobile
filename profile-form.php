@@ -101,7 +101,7 @@ $claim_pg = get_page_by_path( 'your-claim');
 	<?php if ($user_type == 'ref') { ?>
 	<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block">
 		<i class="fa fa-folder-open"></i>
-		<?php echo get_the_title($cases_pg); ?>
+		<?php echo get_the_title($cases_pg); ?> Archive
 	</a>
 	<?php } ?>
 	<?php if ($user_type == 'client') { ?>

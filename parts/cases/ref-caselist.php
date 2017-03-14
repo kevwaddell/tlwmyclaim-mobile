@@ -23,8 +23,8 @@
 	  	<th colspan="2" class="text-center">Progress status:</th>	
   	</tr>
   	<tr class="<?php echo ($case_status == "open") ? 'success':'warning'; ?>">
-	  	<td colspan="2">
-	  	<strong><?php echo $case_progress[count($case_progress) - 1][date]; ?></strong><br><?php echo $case_progress[count($case_progress) - 1][status]; ?>
+	  	<td colspan="2" style="padding-top: 5px; padding-bottom: 5px;">
+	  	<strong><?php echo $case_progress[count($case_progress) - 1][date]; ?></strong>: <?php echo $case_progress[count($case_progress) - 1][status]; ?>
 	  	</td>	
   	</tr>
   	<?php endwhile; ?>
