@@ -3557,6 +3557,9 @@ COLOUR STRIP
   width: 30px;
   border-left: 2px solid white;
 }
+.btn.with-border-bot {
+  border-bottom: 2px solid white;
+}
 .red-btn {
   background-color: #C60751;
   border-bottom: 2px solid white;
@@ -3575,6 +3578,32 @@ COLOUR STRIP
 }
 .red-btn.wp-generate-pw {
   border-bottom: none;
+}
+.blue-btn {
+  background-color: #2D7EA9;
+  color: white;
+}
+.blue-btn i {
+  background-color: #184258;
+}
+.blue-btn:hover,
+.blue-btn:active,
+.blue-btn:focus {
+  background-color: #184258;
+  color: white;
+}
+.orange-btn {
+  background-color: #df7c05;
+}
+.orange-btn i {
+  background-color: #FBAD4F;
+  color: #df7c05;
+}
+.orange-btn:hover,
+.orange-btn:active,
+.orange-btn:focus {
+  background-color: #FBAD4F;
+  color: #df7c05;
 }
 .btn-success {
   background-color: #789b2c;

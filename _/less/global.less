@@ -149,6 +149,10 @@ z-index: 2;
 	.w(3);
 	.border-left(@wht; 0.2);
 	}
+	
+	&.with-border-bot {
+	.border-bot(@wht; 0.2);	
+	}
 }
 
 .red-btn {
@@ -172,6 +176,36 @@ z-index: 2;
 	&.wp-generate-pw {
 	border-bottom: none;	
 	}
+}
+
+.blue-btn {
+.bg-col-blue;
+.txt-col-wht;
+	
+	i {
+	.bg-col-blue-dk;
+	}
+	
+	&:hover, &:active, &:focus {
+	.bg-col-blue-dk;
+	.txt-col-wht;
+	}
+
+}
+
+.orange-btn {
+.bg-col-orange-dk;
+	
+	i {
+	.bg-col-orange;
+	.txt-col-orange-dk;
+	}
+	
+	&:hover, &:active, &:focus {
+	.bg-col-orange;
+	.txt-col-orange-dk;
+	}
+
 }
 
 .btn-success {
