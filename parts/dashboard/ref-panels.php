@@ -46,8 +46,8 @@ $closed = 0;
 	<div class="alert-number"><?php echo $closed; ?></div>
 </div>
 
-<a href="<?php echo get_permalink( $cases_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-folder-open fa-lg"></i>View Your cases</a>
+<a href="<?php echo get_permalink( $cases_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-folder-open fa-lg"></i>Cases Archive</a>
 
-<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i>View Account details</a>
+<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i>Account details</a>
 
 <a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
