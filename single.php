@@ -100,6 +100,14 @@ $user_id = get_current_user_id();
 						<table class="table table-bordered text-center">
 							<tbody>
 								<tr>
+									<th width="50%" class="text-center">Claim Reference</th>
+									<th width="50%" class="text-center">Date created</th>
+							  	</tr>
+							  	<tr>
+									<td><strong><?php echo $case_ref; ?></strong></td>
+									<td><strong><?php echo $case_progress[0]['date']; ?></strong></td>
+							  	</tr>
+								<tr>
 									<th width="50%" class="text-center">Claim type</th>
 									<th width="50%" class="text-center">Date of accident</th>
 							  	</tr>
@@ -155,6 +163,7 @@ $user_id = get_current_user_id();
 				<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i><?php echo get_the_title($account_pg->ID); ?></a>
 				<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>
 					<?php } ?>
+					<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
 			</section>
 		</article><!-- #post-## -->
 		<?php endwhile; ?>

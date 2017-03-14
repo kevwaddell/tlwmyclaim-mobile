@@ -94,10 +94,6 @@ $claim_pg = get_page_by_path( 'your-claim');
 	
 	</form>
 	
-	<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block">
-		<i class="fa fa-envelope fa-lg"></i>
-		<?php echo get_the_title($contact_pg->ID); ?>
-	</a>
 	<a href="<?php echo get_permalink($dashboard_pg->ID ); ?>" class="red-btn btn btn-block">
 		<i class="fa fa-dashboard"></i>
 		<?php echo get_the_title($dashboard_pg->ID); ?>
@@ -114,6 +110,10 @@ $claim_pg = get_page_by_path( 'your-claim');
 		<?php echo get_the_title($claim_pg->ID); ?>
 	</a>
 	<?php } ?>
+	<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block">
+		<i class="fa fa-envelope fa-lg"></i>
+		<?php echo get_the_title($contact_pg->ID); ?>
+	</a>
 	<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block">
 		<i class="fa fa-power-off fa-lg"></i>
 		Log Out
