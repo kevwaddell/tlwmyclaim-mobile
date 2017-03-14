@@ -6,7 +6,10 @@ Template Name: User Claims Page
 <?php if ( is_user_logged_in() ) { ?>
 
 <?php get_header(); ?>
-
+<?php
+$user_id = $current_user->ID;	
+$user_type = get_user_meta( $user_id, 'user_type', true);
+?>
 <?php if ( have_posts() ) : ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
@@ -24,8 +27,6 @@ Template Name: User Claims Page
 		<article id="user-account-info" <?php post_class(); ?>>
 
 			<?php
-			$user_id = $current_user->ID;
-			
 			$claims_args = array(
 				'posts_per_page' => 1,
 				'post_type'		=> 'post',
@@ -141,6 +142,19 @@ Template Name: User Claims Page
 		<?php endwhile; ?>
 
 <?php endif; ?>
+
+<?php if ( $user_type == 'client' ) { ?>
+<?php 
+$field_values = array('fee-earner-name' => $fee_earner['name'], 'fee-earner-email' =>$fee_earner['email']);
+?>
+	<section id="message-handler-form" class="message-form form-closed">
+		<button id="message-handler-btn" class="btn btn-block">Message case handler</button>
+		<div class="message-form-wrap">
+			<?php gravity_form( 2, false, false, false, $field_values, true ); ?>
+		</div>
+	</section>
+<?php } ?>
+
 
 <?php get_footer(); ?>
 

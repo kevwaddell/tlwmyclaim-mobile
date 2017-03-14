@@ -602,16 +602,18 @@ background-position: center center;
 	input[type=tel],
 	input[type=number],
 	input[type=password] {
-	.border(@gray, 0.1);
-	.h(3);
+	//.h(3);
 		&:focus {
 		.border-col(@red);	
 		}	
 	}
 	
+	textarea:focus  {
+		.border-col(@red);
+	}
+	
 	.gform_body textarea.large {
 	.h(10);	
-	.border(@gray, 0.1);
 	.transition(0.5s, ease-out);
 		&:focus {
 		.h(20);
@@ -619,7 +621,7 @@ background-position: center center;
 		}
 	}
 	
-	.gform_footer {
+	form .gform_footer {
 		input.gform_button, input[type=submit] {
 		.block;
 		width: 100% !important;
@@ -627,7 +629,7 @@ background-position: center center;
 		.no-border;
 		.txt-col-wht;
 		.font-slab-serif-bold;
-		.font-size(3);
+		.font-size(2);
 		.line-h(5);
 		.pad-all(0);
 		.caps;

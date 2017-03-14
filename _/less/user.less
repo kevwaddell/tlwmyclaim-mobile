@@ -84,12 +84,16 @@ margin: auto;
 
 .tml-profile {
 	.tml-submit-wrap {
-	.mag-top(1);
+	//.mag-top(1);
 	.mag-bot(0);
 		.btn {
 		.mag-top(0);
 		.mag-bot(0);	
 		}	
+	}
+	
+	button#update-profile {
+	.mag-top(1);	
 	}
 	
 	.acf-field {
@@ -104,5 +108,17 @@ margin: auto;
 	.bg-col-orange-lt;
 	.font-size(1.2);
 	.bold;
+	}
+	
+	button.wp-hide-pw, button.wp-cancel-pw {
+	.font-size(1.2);
+	.bg-col-grayDk;	
+	.txt-col-wht;
+	.pad-left(1);
+	.pad-right(1);
+	.no-border;
+		&:hover, &:active, &:focus {
+		.bg-col-red;
+		}
 	}
 }

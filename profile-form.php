@@ -85,7 +85,7 @@ $claim_pg = get_page_by_path( 'your-claim');
 					<input type="hidden" name="instance" value="<?php $template->the_instance(); ?>" />
 					<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr( $current_user->ID ); ?>" />
 <!-- 					<input type="submit" class="btn btn-block btn-default" value="<?php esc_attr_e( 'Change password', 'theme-my-login' ); ?>" name="submit" id="submit" /> -->
-					<button type="submit" class="btn btn-success btn-block">Change password<i class="fa fa-check"></i></button>
+					<button type="submit" class="btn btn-success btn-block hidden">Change password<i class="fa fa-check"></i></button>
 					</p>
 			  </div>
 		</div>
