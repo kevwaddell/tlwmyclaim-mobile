@@ -4474,6 +4474,16 @@ html.svg #masthead .logo a {
   color: #df7c05;
   background-color: #FBAD4F;
 }
+.dashboard-alert.alert-info {
+  background-color: #184258;
+}
+.dashboard-alert.alert-info .alert-heading i {
+  color: #2D7EA9;
+}
+.dashboard-alert.alert-info .alert-number {
+  color: #184258;
+  background-color: #2D7EA9;
+}
 .sidebar .btn {
   text-transform: uppercase;
   font-family: "aleoreg", "Helvetica Neue", Helvetica, Arial, sans-serif;
