@@ -36,7 +36,7 @@ if ( is_user_logged_in() && $user_type != "client" ) { ?>
 		<section id="client-cases">
 		<?php if ($user_type == "ref") { ?>
 		<div class="alert alert-info text-center dashboard-alert">
-			<div class="alert-heading text-center">Total Cases <i class="fa fa-folder-open"></i>+<i class="fa fa-folder"></i></div>
+			<div class="alert-heading text-center">Total Cases <i class="fa fa-folder-open"></i> + <i class="fa fa-folder"></i></div>
 			<div class="alert-number text-center"><?php echo $found_posts; ?></div>
 		</div>	
 		<?php } ?>
