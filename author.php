@@ -66,22 +66,26 @@
 			<table class="table table-bordered text-center">
 				<thead>
 					<tr>
-						<td colspan="6">Status: <span class="label label-success">Open</span> <span class="label label-warning">Closed</span></td>
+						<td colspan="4">Status: <span class="label label-success">Open</span> <span class="label label-warning">Closed</span></td>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<th width="30%" class="text-center">Case reference</th>
-						<th class="text-center">Case Status</th>
+						<th width="25%" class="text-center">Case reference</th>
+						<th class="text-center">Case type</th>
+						<th width="25%" class="text-center">Case Status</th>
 						<th width="30" class="text-center"><i class="fa fa-eye fa-lg"></i></th>
 					</tr>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php 
 					$case_status = get_post_meta( $post->ID, 'case_status', true );
 					$case_ref = get_post_meta( $post->ID, 'case_ref', true);
+					$claim_details_raw = get_post_meta( $post->ID, 'claim_details', true );
+					$claim_details = unserialize($claim_details_raw);
 					?>
 					<tr class="<?php echo ($case_status == "open") ? 'success':'warning'; ?>">
 					  	<td class="text-center"><?php echo $case_ref; ?></td>
+					  	<td class="text-center"><?php echo $claim_details['claim-type']; ?></td>
 					  	<td class="text-center caps"><span class="label label-<?php echo ($case_status == "open") ? 'success':'warning'; ?>"><?php echo $case_status; ?></span></td>
 					  	<td><a href="<?php the_permalink($claim->ID); ?>" class="btn btn-<?php echo ($case_status == "open") ? 'success':'warning'; ?> btn-block"><span class="sr-only">View case details</span><i class="fa fa-angle-right"></i></a></td>
 					</tr><!-- #post-## -->

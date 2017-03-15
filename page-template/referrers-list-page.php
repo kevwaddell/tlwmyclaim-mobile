@@ -110,18 +110,17 @@ $home_pg = get_option('page_on_front');
 	
 			<?php } ?>
 			<a href="<?php echo get_permalink($home_pg); ?>" class="red-btn btn btn-block">
-			<i class="fa fa-home"></i>
-			Home
+				Home <i class="fa fa-home"></i>
 			</a>
 			<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block">
-			<i class="fa fa-folder-open"></i>
-			<?php echo get_the_title($cases_pg); ?>
+				<?php echo get_the_title($cases_pg); ?> archive <i class="fa fa-folder-open"></i>
 			</a>
 			<a href="<?php echo get_permalink($clients_pg->ID ); ?>" class="red-btn btn btn-block">
-			<i class="fa fa-users"></i>
-			<?php echo get_the_title($clients_pg->ID); ?>
+				<?php echo get_the_title($clients_pg->ID); ?> archive <i class="fa fa-users"></i>
 			</a>
-			<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
+			<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block">
+				Log Out <i class="fa fa-power-off fa-lg"></i>
+			</a>
 
 					
 		</article><!-- #post-## -->
