@@ -106,12 +106,17 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 
 		 		<div class="panel-heading text-center">Case history</div>	
 		
-				<table class="table table-bordered">
+				<table class="table table-bordered text-center">
+					<thead>
+						<tr>
+						<td colspan="3">Status: <span class="label bg-col-green"><i class="fa fa-check txt-col-green-dk"></i> Complete</span> <span class="label bg-col-orange"><i class="fa fa-hourglass-half txt-col-orange-dk"></i> In progress</span></td>
+						</tr>
+					</thead>
 					<tbody>
 						<tr>
-							<th width="5%" class="text-center"><i class="fa fa-info-circle"></i></th>
+							<th width="30" class="text-center"><i class="fa fa-info-circle"></i></th>
 							<th width="30%" class="text-center">Date</th>
-							<th width="65%" class="text-center">Details</th>
+							<th class="text-center">Details</th>
 						</tr>
 					  	<?php 
 						//array_shift($case_progress);

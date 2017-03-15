@@ -11,6 +11,9 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 		$account_pg = get_page_by_path( 'account-details' );
 		$contact_pg = get_page_by_path( 'contact-us');
 		$dashboard_pg = get_page_by_path( 'dashboard' );
+		$cases_pg =  get_option('page_for_posts');
+		$clients_pg = get_page_by_path( 'clients' );
+		$referrers_pg = get_page_by_path( 'referrers' );
 		?>
 		<?php
 		$case_progress_raw = get_post_meta( $post->ID, 'case_progress', true );
@@ -33,10 +36,6 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 				Case status: <strong><?php echo $case_status; ?></strong>
 				<i class="fa fa-folder-<?php echo ($case_status == 'open') ? 'open':''; ?>"></i>
 			</div>
-			<a href="<?php echo get_author_posts_url($post->post_author); ?>" class="red-btn btn btn-block btn-lg">
-				Client profile
-				<i class="fa fa-vcard"></i>
-			</a>
 		<?php } ?>
 
 		<div class="jumbotron wht-border-bottom">
@@ -134,12 +133,17 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 					
 						<div class="panel-heading text-center">Case history</div>	
 		
-						<table class="table table-bordered">
+						<table class="table table-bordered text-center">
+							<thead>
+								<tr>
+									<td colspan="3">Status: <span class="label label-success"><i class="fa fa-check"></i> Complete</span> <span class="label label-warning"><i class="fa fa-hourglass-half"></i> In progress</span></td>
+								</tr>
+							</thead>
 							<tbody>
 							  	<tr>
-								  	<th width="10%" class="text-center"><i class="fa fa-info-circle"></i></th>
+								  	<th width="30" class="text-center"><i class="fa fa-info-circle"></i></th>
 								  	<th width="20%" class="text-center">Date</th>
-								  	<th width="70%" class="text-center">Status</th>
+								  	<th class="text-center">Status</th>
 							  	</tr>
 							  	<?php 
 								//array_shift($case_progress);	
@@ -161,8 +165,26 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 					<?php if ( !current_user_can( 'administrator' ) ) { ?>
 					<button id="contact-handler-btn" class="red-btn btn btn-block btn-lg"><i class="fa fa-comments fa-lg"></i>Message your case handler</button>
 					<a href="<?php echo get_permalink( $dashboard_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-dashboard fa-lg"></i><?php echo get_the_title($dashboard_pg->ID); ?></a>
-				<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i><?php echo get_the_title($account_pg->ID); ?></a>
-				<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>
+					<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i><?php echo get_the_title($account_pg->ID); ?></a>
+					<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>
+					<?php } ?>
+					<?php if ( current_user_can( 'administrator' ) ) { ?>
+					<a href="<?php echo get_author_posts_url($post->post_author); ?>" class="red-btn btn btn-block btn-lg">
+					Client profile
+					<i class="fa fa-vcard"></i>
+					</a>
+					<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block btn-lg">
+					<i class="fa fa-folder-open"></i>
+					<?php echo get_the_title($cases_pg); ?> archive
+					</a>
+					<a href="<?php echo get_permalink($clients_pg->ID ); ?>" class="red-btn btn btn-block btn-lg">
+					<i class="fa fa-users"></i>
+					<?php echo get_the_title($clients_pg->ID); ?> archive
+					</a>
+					<a href="<?php echo get_permalink($referrers_pg->ID ); ?>" class="red-btn btn btn-block btn-lg">
+						<i class="fa fa-building"></i>
+						<?php echo get_the_title($referrers_pg->ID); ?> archive
+					</a>
 					<?php } ?>
 					<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
 			</section>

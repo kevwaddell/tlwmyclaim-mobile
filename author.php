@@ -7,6 +7,10 @@
 <section class="account-info-panels">
 	<?php if ( have_posts() ) : the_post(); ?>
 	<?php 
+	$cases_pg =  get_option('page_for_posts');
+	$clients_pg = get_page_by_path( 'clients' );
+	$referrers_pg = get_page_by_path( 'referrers' );
+	
 	$client_personal_raw = get_user_meta($post->post_author, 'client_personal', true);
 	$client_personal = unserialize($client_personal_raw);
 	$client_contact_raw = get_user_meta($post->post_author, 'client_contact', true);
@@ -67,9 +71,9 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th width="42%" class="text-center">Case reference</th>
-						<th width="43%" class="text-center">Case Status</th>
-						<th width="15%" class="text-center"><i class="fa fa-eye fa-lg"></i></th>
+						<th width="30%" class="text-center">Case reference</th>
+						<th class="text-center">Case Status</th>
+						<th width="30" class="text-center"><i class="fa fa-eye fa-lg"></i></th>
 					</tr>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php 
@@ -89,7 +93,23 @@
 			
 		</div>
 		<?php endif; ?>
-
+		
+		<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block btn-lg">
+		<i class="fa fa-folder-open"></i>
+		<?php echo get_the_title($cases_pg); ?> archive
+		</a>
+		<a href="<?php echo get_permalink($clients_pg->ID ); ?>" class="red-btn btn btn-block btn-lg">
+		<i class="fa fa-users"></i>
+		<?php echo get_the_title($clients_pg->ID); ?> archive
+		</a>
+		<a href="<?php echo get_permalink($referrers_pg->ID ); ?>" class="red-btn btn btn-block btn-lg">
+			<i class="fa fa-building"></i>
+			<?php echo get_the_title($referrers_pg->ID); ?> archive
+		</a>
+		<a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block btn-lg">
+			<i class="fa fa-power-off fa-lg"></i>
+			Log Out
+		</a>
 	</section>
 	
 </article>

@@ -19,6 +19,7 @@ $users = get_users( $users_args );
 //echo '<pre class="debug">';print_r($users);echo '</pre>';
 $cases_pg =  get_option('page_for_posts');
 $clients_pg = get_page_by_path( 'clients' );
+$home_pg = get_option('page_on_front');	
 ?>
 
 
@@ -108,7 +109,10 @@ $clients_pg = get_page_by_path( 'clients' );
 			</div>
 	
 			<?php } ?>
-			
+			<a href="<?php echo get_permalink($home_pg); ?>" class="red-btn btn btn-block">
+			<i class="fa fa-home"></i>
+			Home
+			</a>
 			<a href="<?php echo get_permalink($cases_pg); ?>" class="red-btn btn btn-block">
 			<i class="fa fa-folder-open"></i>
 			<?php echo get_the_title($cases_pg); ?>

@@ -1,8 +1,8 @@
 <tbody>
 	<tr>
-		<th width="42%" class="text-center">Case referrence:</th>
-		<th width="43%" class="text-center">Client name:</th>
-		<th width="15%" class="text-center"><i class="fa fa-eye fa-lg"></i></th>
+		<th width="35%" class="text-center">Case referrence:</th>
+		<th class="text-center">Client name:</th>
+		<th width="30" class="text-center"><i class="fa fa-eye fa-lg"></i></th>
   	</tr>
   	<?php while ( have_posts() ) : the_post(); ?>
   	<?php

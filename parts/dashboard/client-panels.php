@@ -68,29 +68,34 @@ $claims = get_posts( $claims_args );
 <?php if (!empty($claims)) { ?>
 <div class="panel panel-default">
 	<div class="panel-heading text-center">Your claims</div>	
-	<table class="table table-bordered">
-	<tbody>
-		<tr>
-			<th width="20%" class="text-center">Reference</th>
-			<th width="20%" class="text-center">Status</th>
-			<th width="45%" class="text-center">Type</th>
-			<th width="15%" class="text-center"><i class="fa fa-cogs"></i></th>
-		</tr>
-		<?php foreach ($claims as $claim) { 
-		$case_status = get_post_meta( $claim->ID, 'case_status', true );
-		$case_ref = get_post_meta( $claim->ID, 'case_ref', true);
-		$claim_details_raw = get_post_meta( $claim->ID, 'claim_details', true );
-		$claim_details = unserialize($claim_details_raw);
-		?> 
-		<tr class="<?php echo ($case_status == 'open') ? 'success':'danger'; ?>">
-			<td class="text-center"><?php echo $case_ref; ?></td>
-			<td class="text-center"><?php echo strtoupper($case_status); ?></td>
-		  	<td class="text-center"><?php echo $claim_details['claim-type']; ?></td>
-		  	<td><a href="<?php echo get_permalink($claim->ID); ?>" class="btn btn-<?php echo ($case_status == 'open') ? 'success':'danger'; ?> btn-block"><span class="sr-only">View progress</span> <i class="fa fa-chevron-right"><i></a></td>
-	  	</tr>	
-		<?php } ?>
-	</tbody>
-</table>
+	<table class="table table-bordered text-center">
+		<thead>
+			<tr>
+				<td colspan="6">Status: <span class="label label-success">Open</span> <span class="label label-warning">Closed</span></td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th width="20%" class="text-center">Reference</th>
+				<th width="20%" class="text-center">Status</th>
+				<th class="text-center">Type</th>
+				<th width="30" class="text-center"><i class="fa fa-cogs"></i></th>
+			</tr>
+			<?php foreach ($claims as $claim) { 
+			$case_status = get_post_meta( $claim->ID, 'case_status', true );
+			$case_ref = get_post_meta( $claim->ID, 'case_ref', true);
+			$claim_details_raw = get_post_meta( $claim->ID, 'claim_details', true );
+			$claim_details = unserialize($claim_details_raw);
+			?> 
+			<tr class="<?php echo ($case_status == 'open') ? 'success':'danger'; ?>">
+				<td class="text-center"><?php echo $case_ref; ?></td>
+				<td class="text-center"><?php echo strtoupper($case_status); ?></td>
+			  	<td class="text-center"><?php echo $claim_details['claim-type']; ?></td>
+			  	<td><a href="<?php echo get_permalink($claim->ID); ?>" class="btn btn-<?php echo ($case_status == 'open') ? 'success':'danger'; ?> btn-block"><span class="sr-only">View progress</span> <i class="fa fa-chevron-right"><i></a></td>
+		  	</tr>	
+			<?php } ?>
+		</tbody>
+	</table>
 
 </div>
 <?php } ?>

@@ -74,8 +74,13 @@ if ( is_user_logged_in() && ($user_type == "ref" || $user_type == "admin") ) { ?
 		
 		<?php if ($user_type == "admin") { 
 		$clients_pg = get_page_by_path( 'clients' );
-		$referrers_pg = get_page_by_path( 'referrers' );	
+		$referrers_pg = get_page_by_path( 'referrers' );
+		$home_pg = get_option('page_on_front');		
 		?>
+		<a href="<?php echo get_permalink($home_pg); ?>" class="red-btn btn btn-block">
+			<i class="fa fa-home"></i>
+			Home
+		</a>
 		<a href="<?php echo get_permalink($clients_pg->ID ); ?>" class="red-btn btn btn-block">
 			<i class="fa fa-users"></i>
 			<?php echo get_the_title($clients_pg->ID); ?>
@@ -86,7 +91,7 @@ if ( is_user_logged_in() && ($user_type == "ref" || $user_type == "admin") ) { ?
 		</a>
 		<?php } else { 
 		$dashboard_pg = get_page_by_path( 'dashboard' );
-		$account_pg = get_page_by_path( 'account-details' );	
+		$account_pg = get_page_by_path( 'account-details' );
 		?>
 		<a href="<?php echo get_permalink($dashboard_pg->ID ); ?>" class="red-btn btn btn-block">
 			<i class="fa fa-dashboard"></i>
