@@ -3548,6 +3548,9 @@ COLOUR STRIP
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
+.btn.btn-block + .btn-block {
+  margin-top: 0px;
+}
 .btn i {
   font-size: 14px;
   line-height: 30px;

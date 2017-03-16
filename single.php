@@ -59,7 +59,7 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 				 	</div>
 				 	
 					<div class="status-date"><?php echo $date; ?></div>
-					<div class="case-status"><?php echo $status; ?></div>
+					<div class="case-status"><i class="fa fa-check-circle txt-col-orange-dk fa-lg"></i> <?php echo $status; ?></div>
 					
 				</div>
 
@@ -163,7 +163,7 @@ $user_type = get_user_meta( $user_id, 'user_type', true);
 					</div>
 					<?php } ?>
 					<?php if ( !current_user_can( 'administrator' ) ) { ?>
-					<button id="contact-handler-btn" class="red-btn btn btn-block btn-lg"><i class="fa fa-comments fa-lg"></i>Message your case handler</button>
+					<button id="contact-handler-btn" class="orange-btn btn btn-block btn-lg with-border-bot"><i class="fa fa-comments fa-lg"></i>Message your case handler</button>
 					<a href="<?php echo get_permalink( $dashboard_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-dashboard fa-lg"></i><?php echo get_the_title($dashboard_pg->ID); ?></a>
 					<a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i><?php echo get_the_title($account_pg->ID); ?></a>
 					<a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>

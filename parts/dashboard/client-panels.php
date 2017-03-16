@@ -48,10 +48,10 @@ $claim_details = unserialize($claim_details_raw);
  	
 	<div class="status-date"><?php echo $date; ?></div>
 	<div class="case-details"><span>Case type: <?php echo $claim_details['claim-type']; ?></span><br><span>Case Ref: <?php echo $case_ref; ?></span></div>
-	<div class="case-status"><?php echo $status; ?></div>
+	<div class="case-status"><i class="fa fa-check-circle txt-col-orange-dk fa-lg"></i> <?php echo $status; ?></div>
 
 </div>
-<a href="<?php echo get_permalink( $claim_pg->ID ); ?>" class="red-btn btn btn-block"><i class="fa fa-folder-open fa-lg"></i>Case details</a>
+<a href="<?php echo get_permalink( $current_claims[0]->ID ); ?>" class="orange-btn btn btn-block with-border-bot"><i class="fa fa-folder-open fa-lg"></i>Case details</a>
 <?php } ?>
 
 <?php
@@ -99,7 +99,7 @@ $claims = get_posts( $claims_args );
 
 </div>
 <?php } ?>
-
+<a href="<?php echo get_permalink( $claim_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-folder fa-lg"></i><?php echo get_the_title($claim_pg->ID); ?></a>
 <a href="<?php echo get_permalink( $account_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-vcard fa-lg"></i><?php echo get_the_title($account_pg->ID); ?></a>
 <a href="<?php echo get_permalink( $contact_pg->ID ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-envelope fa-lg"></i><?php echo get_the_title($contact_pg->ID); ?></a>
 <a href="<?php echo wp_logout_url( $redirect ); ?>" class="red-btn btn btn-block btn-lg"><i class="fa fa-power-off fa-lg"></i>Log Out</a>
